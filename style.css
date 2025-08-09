@@ -1,0 +1,283 @@
+  /* Custom Navbar Styles */
+  .custom-navbar {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+  }
+
+  .custom-navbar .nav-link {
+    color: #f8f9fa !important;
+    position: relative;
+    margin-right: 15px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  .custom-navbar .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #00bcd4;
+    transition: width 0.3s ease;
+  }
+
+  .custom-navbar .nav-link:hover::after,
+  .custom-navbar .nav-link.active::after {
+    width: 100%;
+  }
+
+  .custom-navbar .nav-link:hover {
+    color: #00bcd4 !important;
+  }
+
+  .navbar-brand {
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: #ffffff !important;
+  }
+
+  /* Optional fixed top navbar */
+  .fixed-top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  .custom-navbar {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  min-height: 50px;
+}
+
+.custom-navbar .navbar-brand {
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: 1.2rem;
+}
+
+.custom-navbar .nav-link {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  font-size: 0.95rem;
+}
+
+----------------------------
+
+/* Base Card Animation Style */
+.animate-card {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background: #fff;
+}
+
+/* Fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeOpacityIn 0.8s ease forwards;
+}
+
+@keyframes fadeOpacityIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+.fade-delay-1 {
+  animation-delay: 0.1s;
+}
+.fade-delay-2 {
+  animation-delay: 0.2s;
+}
+.fade-delay-3 {
+  animation-delay: 0.3s;
+}
+.fade-delay-4 {
+  animation-delay: 0.4s;
+}
+.fade-delay-5 {
+  animation-delay: 0.5s;
+}
+/* Card 3D Tilt Animation */
+.card-tilt-wrapper {
+  perspective: 1000px;
+}
+
+.animate-card {
+  transform-style: preserve-3d;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  will-change: transform;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+/* Highlight the card by popping it out slightly on hover */
+.animate-card:hover {
+  transform: scale(1.05) !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2) !important;
+  z-index: 2 !important;
+}
+.card.animate-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+/* Pop-out effect on existing cards without modifying HTML */
+.card.text-decoration-none.h-100.shadow-sm:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 2;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Optional enhanced shadow */
+}
+
+/* Ensure smooth transition even without hover */
+.card.text-decoration-none.h-100.shadow-sm {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.footer-advanced {
+  background: rgba(15, 15, 15, 0.92);
+  backdrop-filter: blur(12px);
+  color: #f1f1f1;
+  padding: 50px 0 20px;
+}
+
+.footer-title {
+  font-weight: 700;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.footer-title::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 40px;
+  background: linear-gradient(90deg, #0d6efd, #00c6ff);
+  margin-top: 5px;
+  border-radius: 2px;
+  animation: gradient-move 3s infinite linear;
+}
+
+.footer-link {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.footer-link:hover {
+  color: #0d6efd;
+  transform: translateX(5px);
+}
+
+.gradient-line {
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, #0d6efd, #00c6ff, #0d6efd);
+  background-size: 200% 100%;
+  animation: gradient-move 3s infinite linear;
+  margin-top: 20px;
+}
+
+.social-icon {
+  color: #ccc;
+  font-size: 18px;
+  margin-left: 10px;
+  transition: color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.social-icon:hover {
+  color: #00c6ff;
+  transform: scale(1.2);
+  box-shadow: 0 0 10px #00c6ff;
+}
+
+@keyframes gradient-move {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+------------------------
+
+/* General Page Layout */
+.page-wrapper {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* Heading Styles */
+.page-wrapper h1 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: #222;
+    font-weight: 600;
+}
+
+.page-wrapper h2 {
+    margin-top: 30px;
+    color: #333;
+    font-size: 1.4rem;
+    border-left: 4px solid #007BFF;
+    padding-left: 10px;
+}
+.footer-advanced .developer-name {
+    font-style: italic;
+    font-size: 0.9rem;
+    opacity: 0.85;
+}
+.footer-advanced .fa-heart {
+    margin-right: 5px;
+}
+
+/* Paragraph Styles */
+.page-wrapper p {
+    line-height: 1.7;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Lists */
+.page-wrapper ul {
+    margin: 15px 0 15px 25px;
+    color: #555;
+}
+
+.page-wrapper li {
+    margin-bottom: 10px;
+}
+
+/* Links */
+.page-wrapper a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.page-wrapper a:hover {
+    text-decoration: underline;
+}
+

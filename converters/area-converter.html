@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Area Converter</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome for Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+
+ <script>
+    function convertArea() {
+      const input = parseFloat(document.getElementById("inputValue").value);
+      const from = document.getElementById("fromUnit").value;
+      const to = document.getElementById("toUnit").value;
+
+      if (isNaN(input)) {
+        document.getElementById("result").textContent = "Please enter a valid number.";
+        return;
+      }
+
+      // Area conversion rates to square meters
+      const toSqMeter = {
+        sqm: 1,
+        sqkm: 1e6,
+        sqft: 0.092903,
+        sqin: 0.00064516,
+        sqyd: 0.836127,
+        acre: 4046.86,
+        hectare: 10000
+      };
+
+      const valueInSqMeters = input * toSqMeter[from];
+      const result = valueInSqMeters / toSqMeter[to];
+
+      document.getElementById("result").textContent = `${input} ${from} = ${result.toFixed(4)} ${to}`;
+    }
+  </script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg custom-navbar fixed-top animate__animated animate__fadeInDown">
+  <div class="container-fluid px-4">
+    <a class="navbar-brand" href="../index.html">OmniConvert</a>
+    <button class="navbar-toggler text-white border-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" href="../index.html">Home</a>
+        <a class="nav-link" href="../pages/number.html">Number & Math</a>
+        <a class="nav-link" href="../pages/unit.html">Unit Conversions</a>
+        <a class="nav-link" href="../pages/data.html">Data & Text</a>
+        <a class="nav-link" href="../pages/dev.html">Security & Dev</a>
+        <a class="nav-link" href="../pages/utilities.html">Utilities</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="#">ConvertPro</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto">
+          <!-- Number & Math Tools -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Number & Math</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="decimal-binary.html">Decimal ↔ Binary, Hex, Octal</a></li>
+              <li><a class="dropdown-item" href="roman-decimal.html">Roman ↔ Decimal</a></li>
+              <li><a class="dropdown-item" href="lcm-hcf.html">LCM & HCF Calculator</a></li>
+              <li><a class="dropdown-item" href="percentage.html">Percentage Calculator</a></li>
+              <li><a class="dropdown-item" href="prime-checker.html">Prime Number Checker</a></li>
+              <li><a class="dropdown-item" href="equation-solver.html">Equation Solver</a></li>
+            </ul>
+          </li>
+
+          <!-- Unit Conversions -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Unit Conversions</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="length.html">Length</a></li>
+              <li><a class="dropdown-item" href="weight.html">Weight</a></li>
+              <li><a class="dropdown-item" href="temperature.html">Temperature</a></li>
+              <li><a class="dropdown-item" href="area.html">Area</a></li>
+              <li><a class="dropdown-item" href="volume.html">Volume</a></li>
+              <li><a class="dropdown-item" href="speed.html">Speed</a></li>
+              <li><a class="dropdown-item" href="pressure.html">Pressure</a></li>
+              <li><a class="dropdown-item" href="timezone.html">Time Zone Converter</a></li>
+              <li><a class="dropdown-item" href="currency.html">Currency Converter</a></li>
+            </ul>
+          </li>
+
+          <!-- Data & Text Tools -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Data & Text</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="text-binary.html">Text ↔ Binary, ASCII</a></li>
+              <li><a class="dropdown-item" href="morse.html">Morse Code Encoder/Decoder</a></li>
+              <li><a class="dropdown-item" href="base64.html">Base64 Encoder/Decoder</a></li>
+              <li><a class="dropdown-item" href="url.html">URL Encoder/Decoder</a></li>
+              <li><a class="dropdown-item" href="text-case.html">Text Case Converter</a></li>
+              <li><a class="dropdown-item" href="qr.html">QR Code Generator</a></li>
+              <li><a class="dropdown-item" href="barcode.html">Barcode Generator</a></li>
+            </ul>
+          </li>
+
+          <!-- Security & Dev Tools -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Security & Dev</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="hash.html">Hash Generator</a></li>
+              <li><a class="dropdown-item" href="uuid.html">UUID Generator</a></li>
+              <li><a class="dropdown-item" href="json.html">JSON Formatter</a></li>
+              <li><a class="dropdown-item" href="iplookup.html">IP Address Lookup</a></li>
+            </ul>
+          </li>
+
+          <!-- Calculators & Utilities -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Utilities</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="bmi.html">BMI Calculator</a></li>
+              <li><a class="dropdown-item" href="age.html">Age Calculator</a></li>
+              <li><a class="dropdown-item" href="datediff.html">Date/Time Difference</a></li>
+              <li><a class="dropdown-item" href="emi.html">EMI / Loan Calculator</a></li>
+              <li><a class="dropdown-item" href="tip.html">Tip Calculator</a></li>
+              <li><a class="dropdown-item" href="feels-like.html">Feels-Like Temp Calculator</a></li>
+            </ul>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container py-5">
+    <h2 class="text-center fw-bold mb-4">Area Converter</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card shadow-sm p-4">
+          <div class="mb-3">
+            <label for="inputValue" class="form-label">Enter value:</label>
+            <input type="number" id="inputValue" class="form-control" placeholder="Enter area" />
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="fromUnit" class="form-label">From:</label>
+              <select id="fromUnit" class="form-select">
+                <option value="sqm">Square Meter (m²)</option>
+                <option value="sqkm">Square Kilometer (km²)</option>
+                <option value="sqft">Square Foot (ft²)</option>
+                <option value="sqin">Square Inch (in²)</option>
+                <option value="sqyd">Square Yard (yd²)</option>
+                <option value="acre">Acre</option>
+                <option value="hectare">Hectare</option>
+              </select>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="toUnit" class="form-label">To:</label>
+              <select id="toUnit" class="form-select">
+                <option value="sqm">Square Meter (m²)</option>
+                <option value="sqkm">Square Kilometer (km²)</option>
+                <option value="sqft">Square Foot (ft²)</option>
+                <option value="sqin">Square Inch (in²)</option>
+                <option value="sqyd">Square Yard (yd²)</option>
+                <option value="acre">Acre</option>
+                <option value="hectare">Hectare</option>
+              </select>
+            </div>
+          </div>
+          <div class="d-grid mb-3">
+            <button onclick="convertArea()" class="btn btn-primary">Convert</button>
+          </div>
+          <div id="result" class="text-center fw-bold fs-5"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer-advanced animate__animated animate__fadeInUp">
+  <div class="container text-md-left">
+    <div class="row text-md-left">
+
+      <!-- About -->
+      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="footer-title">OmniConvert</h5>
+        <p>Your trusted platform for accurate, fast, and easy conversions — from numbers and units to text and data tools.</p>
+      </div>
+
+      <!-- Categories -->
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+        <h5 class="footer-title">Categories</h5>
+        <p><a href="../pages/number.html" class="footer-link">Math Tools</a></p>
+        <p><a href="../pages/unit.html" class="footer-link">Unit Conversion</a></p>
+        <p><a href="../pages/data.html" class="footer-link">Text & Data Tools</a></p>
+        <p><a href="../pages/dev.html" class="footer-link">Security Tools</a></p>
+        <p><a href="../pages/utilities.html" class="footer-link">Utilities</a></p>
+      </div>
+
+      <!-- Useful Links -->
+      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+        <h5 class="footer-title">Useful Links</h5>
+        <p><a href="../pages/privacy.html" class="footer-link">Privacy Policy</a></p>
+        <p><a href="../pages/terms.html" class="footer-link">Terms & Conditions</a></p>
+        <p><a href="../pages/help.html" class="footer-link">Help</a></p>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="footer-title">Contact</h5>
+        <p><i class="fas fa-envelope me-3"></i> convertomni@gmail.com</p>
+        <p><i class="fas fa-phone me-3"></i> +91 ***** *****</p>
+      </div>
+
+    </div>
+
+    <hr class="gradient-line">
+
+    <!-- Bottom Row -->
+    <div class="row align-items-center mt-4">
+      <div class="col-md-7 col-lg-8">
+        <p class="mb-0">© 2025 OmniConvert. <span class="developer-name">❤️ Developed by Abhinav K</span>. All Rights Reserved.</p>
+      </div>
+      <div class="col-md-5 col-lg-4">
+        <div class="text-center text-md-end">
+          <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.linkedin.com/in/abhinav-k-073390294?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/AbhinavMadhu06" class="social-icon"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
