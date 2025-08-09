@@ -23,7 +23,7 @@ https://abhinavmadhu06.github.io/omniconvert/
 - Animate.css
 
 ## 📧 Contact
-For any queries or support, email: **convertomini**
+For any queries or support, email: **convertomini@gmail.com**
 
 ---
 
